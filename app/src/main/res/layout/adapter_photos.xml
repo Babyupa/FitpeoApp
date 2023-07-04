@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="p" type="com.fitpeo.fitpeoapp.model.PhotosEntity" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/list_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/list_imageview"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            app:loadImage="@{p.url}"
+            android:scaleType="centerCrop" />
+
+
+        <LinearLayout
+            android:id="@+id/list_item_holder"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/list_imageview"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/list_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:text="@{p.title}"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/list_location"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingBottom="3dp"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:text="@{p.albumId}"-->
+<!--                android:textColor="#757575"-->
+<!--                android:textSize="14sp" />-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
